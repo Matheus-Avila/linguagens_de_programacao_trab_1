@@ -1,0 +1,30 @@
+estudante(matheus,cienciadacomputacao).
+estudante(lucas,sistemasdeinformacao).
+
+nota(matheus,algoritmos,70).
+nota(matheus,calculo1,90).
+nota(matheus,calculo2,40).
+
+disciplina(algoritmos,cienciadacomputacao).
+disciplina(algoritmos,sistemasdeinformacao).
+
+disciplina(calculo1,cienciadacomputacao).
+disciplina(calculo1,sistemasdeinformacao).
+
+disciplina(calculo2,cienciadacomputacao).
+disciplina(calculo2,sistemasdeinformacao).
+
+disciplina(calculo3,cienciadacomputacao).
+disciplina(calculo3,sistemasdeinformacao).
+
+disciplina(fisica1,cienciadacomputacao).
+disciplina(fisica1,sistemasdeinformacao).
+
+disciplina(fisica2,cienciadacomputacao).
+disciplina(fisica2,sistemasdeinformacao).
+
+matriz(Y,Z) :- disciplina(Y,Z).
+
+ira(X,I) :- findall(Z, historico(X,Y,Z), L), sumlist(L, S), I is S/4.
+
+historico(X,Y,Z):- estudante(X,C), disciplina(Y,C), nota(X,Y,Z).
