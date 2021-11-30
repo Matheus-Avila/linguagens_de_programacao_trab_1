@@ -1,30 +1,58 @@
-estudante(matheus,cienciadacomputacao).
-estudante(lucas,sistemasdeinformacao).
+estudante('Matheus','Ciência da computação').
+estudante('Thiago','Ciência da computação').
+estudante('André','Ciência da computação').
+estudante('Lucas','Sistemas de Informação').
 
-nota(matheus,algoritmos,70).
-nota(matheus,calculo1,90).
-nota(matheus,calculo2,40).
+nota('Matheus','Algoritmos',70).
+nota('Matheus','Calculo 1',90).
+nota('Matheus','Calculo 2',40).
 
-disciplina(algoritmos,cienciadacomputacao).
-disciplina(algoritmos,sistemasdeinformacao).
+nota('André','Calculo 1',80).
+nota('Thiago','Calculo 2',70).
 
-disciplina(calculo1,cienciadacomputacao).
-disciplina(calculo1,sistemasdeinformacao).
+nota('Lucas','Calculo 1',40).
 
-disciplina(calculo2,cienciadacomputacao).
-disciplina(calculo2,sistemasdeinformacao).
+disciplina('Algoritmos','Ciência da computação').
+disciplina('Algoritmos','Sistemas de Informação').
 
-disciplina(calculo3,cienciadacomputacao).
-disciplina(calculo3,sistemasdeinformacao).
+disciplina('Calculo 1','Ciência da computação').
+disciplina('Calculo 1','Sistemas de Informação').
 
-disciplina(fisica1,cienciadacomputacao).
-disciplina(fisica1,sistemasdeinformacao).
+disciplina('Calculo 2','Ciência da computação').
+disciplina('Calculo 2','Sistemas de Informação').
 
-disciplina(fisica2,cienciadacomputacao).
-disciplina(fisica2,sistemasdeinformacao).
+disciplina('Calculo 3','Ciência da computação').
+disciplina('Calculo 3','Sistemas de Informação').
 
-matriz(Y,Z) :- disciplina(Y,Z).
+disciplina('Fisica 1','Ciência da computação').
+disciplina('Fisica 1','Sistemas de Informação').
 
-ira(X,I) :- findall(Z, historico(X,Y,Z), L), sumlist(L, S), I is S/4.
+disciplina('Fisica 2','Ciência da computação').
+disciplina('Fisica 2','Sistemas de Informação').
 
-historico(X,Y,Z):- estudante(X,C), disciplina(Y,C), nota(X,Y,Z).
+alunoCursouDisciplinaAux(Aluno, Disciplina) :- estudante(Aluno, _), nota(Aluno, Disciplina, _).
+
+alunoCursouDisciplina(Alunos, Disciplina) :- findall(Aluno, alunoCursouDisciplinaAux(Aluno, Disciplina), Alunos).
+alunoCursouDisciplinaNotaMin(Alunos, Disciplina, ValorMin) :- findall(Aluno, filtroPorNota(Aluno, _, Disciplina, ValorMin), Alunos).
+
+filtraIraAux(Aluno, Curso, IraMin) :- estudanteIra(Aluno, Curso, IraResultado), IraResultado >= IraMin.
+
+alunosCursoIraMinimo(Alunos, Curso, IraMin) :- findall(Aluno, filtraIraAux(Aluno, Curso, IraMin), Alunos).
+
+filtroPorNota(Aluno, Curso, Disciplina, ValorMin) :- estudante(Aluno, Curso), nota(Aluno, Disciplina, Valor), Valor>=ValorMin.
+
+alunosCursoDisciplinaNotaMinima(Alunos, Curso, Disciplina, ValorMin) :- findall(Aluno, filtroPorNota(Aluno, Curso, Disciplina, ValorMin), Alunos).
+
+cursosComDisciplina(Disciplina, Cursos) :- findall(Curso, disciplina(Disciplina, Curso), Cursos).
+
+matriz(DisciplinasMatriz, Curso) :- findall(Disciplinas, disciplina(Disciplinas, Curso), DisciplinasMatriz).
+
+historicoComNota(Aluno, Lista) :- findall(Disciplinas/Valor, nota(Aluno, Disciplinas, Valor), Lista).
+
+historicoSemNota(Aluno, Lista) :- findall(Disciplinas, nota(Aluno, Disciplinas, _), Lista).
+
+estudanteIra(Aluno, Curso, Ira) :- estudante(Aluno, Curso), ira(Aluno, Ira).
+
+ira(Aluno, IraResultado) :- findall(Valor, nota(Aluno, _, Valor), Notas), sumlist(Notas, Soma), length(Notas, Tamanho), dif(Tamanho,0) -> IraResultado is Soma/Tamanho; IraResultado is 0.
+
+estudantesCurso(ListaAlunos, Curso) :- findall(Aluno, estudante(Aluno, Curso), ListaAlunos).
