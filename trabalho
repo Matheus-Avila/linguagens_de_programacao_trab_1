@@ -56,3 +56,25 @@ estudanteIra(Aluno, Curso, Ira) :- estudante(Aluno, Curso), ira(Aluno, Ira).
 ira(Aluno, IraResultado) :- findall(Valor, nota(Aluno, _, Valor), Notas), sumlist(Notas, Soma), length(Notas, Tamanho), dif(Tamanho,0) -> IraResultado is Soma/Tamanho; IraResultado is 0.
 
 estudantesCurso(ListaAlunos, Curso) :- findall(Aluno, estudante(Aluno, Curso), ListaAlunos).
+
+%verificar se escolha é válida antes de dar executaEscolha(Escolha).
+menu :- repeat,
+    write('Bem vindo ao sistema de gestão acadêmica! Escolha uma opção: '),nl,
+    write('1: Calcular IRA de um aluno'),nl,
+    write('2: Buscar matriz curricular de um curso'),nl,
+    write('3: Buscar histórico de um aluno'),nl,
+    write('4: Buscar alunos matriculados em um curso'),nl,
+    read(Escolha),
+    executaEscolha(Escolha).
+
+executaEscolha(1) :- write('Digite o nome do aluno entre aspas simples'),nl,
+    read(Nome),nl,
+    estudanteIra(Nome, Curso, IraResultado),
+    write(IraResultado),nl,
+    menu.
+
+executaEscolha(2) :- write('Digite o nome do curso entre aspas simples'),nl,
+    read(Curso),nl,
+    matriz(DisciplinasMatriz, Curso),
+    write(DisciplinasMatriz),nl,
+    menu.
