@@ -8,6 +8,7 @@
   ]
 ).
 
+
 :- persistent(estudante(nome:atom,curso:atom)).
 
 :- initialization(db_attach('db.pl', [])).
@@ -16,8 +17,7 @@ add_estudante(Nome,Curso):-
   with_mutex(estudante_db, assert_estudante(Nome,Curso)).
 
 current_estudante(Nome,Curso):-
-  with_mutex(estudante_db, estudante(Name, Price, Color)).
-
+  with_mutex(estudante_db, estudante(Nome,Curso)).
 
 %estudantes de Ciencia da Computação
 
