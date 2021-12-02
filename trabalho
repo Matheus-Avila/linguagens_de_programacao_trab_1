@@ -12,23 +12,70 @@ nota('Thiago','Calculo 2',70).
 
 nota('Lucas','Calculo 1',40).
 
+% disciplinas de Ciência da computação
+ %1°periodo
 disciplina('Algoritmos','Ciência da computação').
-disciplina('Algoritmos','Sistemas de Informação').
-
-disciplina('Calculo 1','Ciência da computação').
-disciplina('Calculo 1','Sistemas de Informação').
-
+disciplina('Lógica e Fundamentso da Computação','Ciência da computação').
+disciplina('Geom. Anal e Sist. Lineares','Ciência da computação').
+disciplina('Lab. C.C','Ciência da computação').
+disciplina('Lab de Prog.','Ciência da computação').
+disciplina('Introd. Á C.C','Ciência da computação').
+%2°periodo
+disciplina('Algebra Linear','Ciência da computação').
 disciplina('Calculo 2','Ciência da computação').
-disciplina('Calculo 2','Sistemas de Informação').
-
-disciplina('Calculo 3','Ciência da computação').
-disciplina('Calculo 3','Sistemas de Informação').
-
 disciplina('Fisica 1','Ciência da computação').
-disciplina('Fisica 1','Sistemas de Informação').
+disciplina('Lab. Fisica 1','Ciência da computação').
+disciplina('Estrutura de Dados','Ciência da computação').
+disciplina('Lab. de Prog. 2','Ciência da computação').
+%3°periodo
+disciplina('Int. A Teorida dos Numeros','Ciência da computação').
+disciplina('Calculo 3','Ciência da computação').
+disciplina('Teoria dos Grafos','Ciência da computação').
+disciplina('Circuitos Digitais','Ciência da computação').
+disciplina('Orientação a Objetos','Ciência da computação').
+disciplina('Inf & Socied.','Ciência da computação').
+%4°periodo
+disciplina('Equacões Diferenciais I','Ciência da computação').
+disciplina('Introdução a Estatistica','Ciência da computação').
+disciplina('Organização de Computadores','Ciência da computação').
+disciplina('Estrutura de Dados II','Ciência da computação').
+disciplina('Modelagem de Sistemas','Ciência da computação').
+%5°periodo
+disciplina('Calculo de Probabilidades','Ciência da computação').
+disciplina('Inteligencia Artificial','Ciência da computação').
+disciplina('Sistemas Operacionais','Ciência da computação').
+disciplina('Banco de Dados','Ciência da computação').
+disciplina('Engenharia de Software','Ciência da computação').
+%6°periodo
+disciplina('Pesquisa Operacional','Ciência da computação').
+disciplina('Linguagens Formais','Ciência da computação').
+disciplina('Redes de Computadores','Ciência da computação').
+disciplina('Calculo Numérico','Ciência da computação').
+disciplina('Interação Humano Computador','Ciência da computação').
+%7°periodo
+disciplina('Segurança em Sis. de Computação','Ciência da computação').
+disciplina('Teoria da Computação','Ciência da computação').
+disciplina('Analise e Projeto de Algoritimos','Ciência da computação').
+disciplina('Computação Grafica','Ciência da computação').
+%8°periodo
+disciplina('Linguagens de Programação','Ciência da computação').
+disciplina('Teoria dos Compiladores','Ciência da computação').
+disciplina('Sistemas Distribuídos','Ciência da computação').
+
+
+
 
 disciplina('Fisica 2','Ciência da computação').
+
+%discplinas de Sistemas de Informação
+
+disciplina('Algoritmos','Sistemas de Informação').
+disciplina('Calculo 1','Sistemas de Informação').
+disciplina('Calculo 2','Sistemas de Informação').
+disciplina('Calculo 3','Sistemas de Informação').
+disciplina('Fisica 1','Sistemas de Informação').
 disciplina('Fisica 2','Sistemas de Informação').
+
 
 alunoCursouDisciplinaAux(Aluno, Disciplina) :- estudante(Aluno, _), nota(Aluno, Disciplina, _).
 
