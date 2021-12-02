@@ -1,5 +1,3 @@
-:- use_module(library(persistency)).
-:- use_module(db).
 :- module(
   estudante,
   [
@@ -8,10 +6,11 @@
   ]
 ).
 
+:- use_module(library(persistency)).
 
 :- persistent(estudante(nome:atom,curso:atom)).
 
-:- initialization(db_attach('db.pl', [])).
+:- initialization(db_attach('estudante_db', [])).
 
 add_estudante(Nome,Curso):-
   with_mutex(estudante_db, assert_estudante(Nome,Curso)).
