@@ -1,26 +1,7 @@
-%estudantes de Ciencia da Computação
-estudante('Matheus','Ciência da computação').
-estudante('Noberto','Ciência da computação').
-estudante('Alvaro','Ciência da computação').
-estudante('Felix','Ciência da computação').
-estudante('Mauro','Ciência da computação').
-estudante('Elias','Ciência da computação').
-estudante('Maximiliano','Ciência da computação').
-estudante('Mauricio','Ciência da computação').
-estudante('Celestino','Ciência da computação').
-estudante('André','Ciência da computação').
+:- use_module(library(persistency)).
+:- use_module(db).
 
-%estudantes de Sistemas de Informação
-estudante('Lucas','Sistemas de Informação').
-estudante('Afonso','Sistemas de Informação').
-estudante('Aldo','Sistemas de Informação').
-estudante('João','Sistemas de Informação').
-estudante('Casimiro','Sistemas de Informação').
-estudante('Elias','Sistemas de Informação').
-estudante('Ivo','Sistemas de Informação').
-estudante('Marcos','Sistemas de Informação').
-estudante('José','Sistemas de Informação').
-estudante('Telmo','Sistemas de Informação').
+%estudantes de Ciencia da Computação
 
 nota('Matheus','Algoritmos',70).
 nota('Matheus','Calculo 1',90).
@@ -35,7 +16,7 @@ nota('Lucas','Calculo 1',40).
  %1°periodo
 disciplina('Algoritmos','Ciência da computação').
 disciplina('Calculo 1','Ciência da computação').
-disciplina('Lógica e Fundamentso da Computação','Ciência da computação').
+disciplina('Lógica e Fundamentos da Computação','Ciência da computação').
 disciplina('Geom. Anal e Sist. Lineares','Ciência da computação').
 disciplina('Lab. C.C','Ciência da computação').
 disciplina('Lab de Prog.','Ciência da computação').
@@ -48,7 +29,7 @@ disciplina('Lab. Fisica 1','Ciência da computação').
 disciplina('Estrutura de Dados','Ciência da computação').
 disciplina('Lab. de Prog. 2','Ciência da computação').
 %3°periodo
-disciplina('Int. A Teorida dos Numeros','Ciência da computação').
+disciplina('Int. A Teoria da dos Numeros','Ciência da computação').
 disciplina('Calculo 3','Ciência da computação').
 disciplina('Teoria dos Grafos','Ciência da computação').
 disciplina('Circuitos Digitais','Ciência da computação').
@@ -82,7 +63,7 @@ disciplina('Linguagens de Programação','Ciência da computação').
 disciplina('Teoria dos Compiladores','Ciência da computação').
 disciplina('Sistemas Distribuídos','Ciência da computação').
 
-Sistemas de Informação
+%Sistemas de Informação
 
 %discplinas de Sistemas de Informação
  %1°periodo
