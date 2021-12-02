@@ -15,6 +15,7 @@ nota('Lucas','Calculo 1',40).
 % disciplinas de Ciência da computação
  %1°periodo
 disciplina('Algoritmos','Ciência da computação').
+disciplina('Calculo 1','Ciência da computação').
 disciplina('Lógica e Fundamentso da Computação','Ciência da computação').
 disciplina('Geom. Anal e Sist. Lineares','Ciência da computação').
 disciplina('Lab. C.C','Ciência da computação').
@@ -62,19 +63,60 @@ disciplina('Linguagens de Programação','Ciência da computação').
 disciplina('Teoria dos Compiladores','Ciência da computação').
 disciplina('Sistemas Distribuídos','Ciência da computação').
 
-
-
-
-disciplina('Fisica 2','Ciência da computação').
+Sistemas de Informação
 
 %discplinas de Sistemas de Informação
-
+ %1°periodo
 disciplina('Algoritmos','Sistemas de Informação').
 disciplina('Calculo 1','Sistemas de Informação').
+disciplina('Lógica e Fundamentos da Computação','Sistemas de Informação').
+disciplina('Geom. Anal e Sist. Lineares','Sistemas de Informação').
+disciplina('Lab de Prog.','Sistemas de Informação').
+disciplina('Introd. Á Sistemas de Informação','Sistemas de Informação').
+ %2°periodo
+disciplina('Laboratorio de Program. Web','Sistemas de Informação').
 disciplina('Calculo 2','Sistemas de Informação').
-disciplina('Calculo 3','Sistemas de Informação').
-disciplina('Fisica 1','Sistemas de Informação').
-disciplina('Fisica 2','Sistemas de Informação').
+disciplina('Estrutura de Dados','Sistemas de Informação').
+disciplina('Principios Gerais de Administraçao I','Sistemas de Informação').
+disciplina('Lab de Prog. II','Sistemas de Informação').
+disciplina('Aspectos Legais da Informatica','Sistemas de Informação').
+ %3°periodo
+disciplina('Calculo de Prbabilidades I','Sistemas de Informação').
+disciplina('Orientação a Objetos','Sistemas de Informação').
+disciplina('Teoria dos Grafos','Sistemas de Informação').
+disciplina('Contabilidade Geral e Introdutória','Sistemas de Informação').
+disciplina('Informatica e Sociedade','Sistemas de Informação').
+ %4° periodo
+disciplina('Organização de Compiladores','Sistemas de Informação').
+disciplina('Modelagem de Sistemas','Sistemas de Informação').
+disciplina('Aspectos Teoricos da Computação','Sistemas de Informação').
+disciplina('Estrutura de Dados II','Sistemas de Informação').
+ %5° periodo
+disciplina('Sistemas Operacionais','Sistemas de Informação').
+disciplina('Inteligencia Artificial','Sistemas de Informação').
+disciplina('Engenharia de Software','Sistemas de Informação').
+disciplina('Banco de Dados','Sistemas de Informação').
+disciplina('Laboratorio de Programação de Sistemas Web','Sistemas de Informação').
+ %6° periodo
+disciplina('Redes de computadores','Sistemas de Informação').
+disciplina('Pesquisa Operacional','Sistemas de Informação').
+disciplina('Intreação Humano-Computador','Sistemas de Informação').
+disciplina('Laboratorio de Programação de Sistemas Web II','Sistemas de Informação').
+disciplina('Empreendimentos em Informatica','Sistemas de Informação').
+ %7° periodo
+disciplina('Gerencia de Projetos','Sistemas de Informação').
+disciplina('Teste de Software','Sistemas de Informação').
+disciplina('Aspectos Avançados de Eng. de Software','Sistemas de Informação').
+disciplina('Aspectos  Avançados em Banco de Dados','Sistemas de Informação').
+disciplina('Aspectos Organizacionais de SI','Sistemas de Informação').
+disciplina('Metodologia Científica em Computação','Sistemas de Informação').
+ %8° periodo
+disciplina('Laboratorio de Programação para Dispostivos Móveis','Sistemas de Informação').
+disciplina('Sistema de Apoio á Decisão','Sistemas de Informação').
+disciplina('Segurança e Auditoria em Sistemas','Sistemas de Informação').
+
+ 
+
 
 
 alunoCursouDisciplinaAux(Aluno, Disciplina) :- estudante(Aluno, _), nota(Aluno, Disciplina, _).
