@@ -1,5 +1,23 @@
 :- use_module(library(persistency)).
 :- use_module(db).
+:- module(
+  estudante,
+  [
+    add_estudante/2, % +Nome:atom, +Curso:atom
+    current_estudante/2 % ?Nome:atom, ?Curso:atom
+  ]
+).
+
+:- persistent(estudante(nome:atom,curso:atom)).
+
+:- initialization(db_attach('db.pl', [])).
+
+add_estudante(Nome,Curso):-
+  with_mutex(estudante_db, assert_estudante(Nome,Curso)).
+
+current_estudante(Nome,Curso):-
+  with_mutex(estudante_db, estudante(Name, Price, Color)).
+
 
 %estudantes de Ciencia da Computação
 
