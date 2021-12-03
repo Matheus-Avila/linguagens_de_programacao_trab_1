@@ -1,7 +1,9 @@
+% Cadastro e Remoção de estudantes
 :- module(
   estudante,
   [
     add_estudante/2, % +Nome:atom, +Curso:atom
+    retract_estudante/2, % -Nome:atom, -Curso:atom
     current_estudante/2 % ?Nome:atom, ?Curso:atom
   ]
 ).
@@ -20,6 +22,31 @@ retract_estudante(Nome,Curso):-
 
 current_estudante(Nome,Curso):-
   with_mutex(estudante_db, estudante(Nome,Curso)).
+
+% Cadastro e Remoção de Disciplinas
+:- module(
+  disciplina,
+  [
+    add_disciplina/2, % +Nome:atom, +Curso:atom
+    retract_disciplina/2, % -Nome:atom, -Curso:atom
+    current_disciplina/2 % ?Nome:atom, ?Curso:atom
+  ]
+).
+
+:- use_module(library(persistency)).
+
+:- persistent(disciplina(nome:atom,curso:atom)).
+
+:- initialization(db_attach('estudante_db', [])).
+
+add_disciplina(Nome,Curso):-
+  with_mutex(disciplina_db, assert_disciplina(Nome,Curso)).
+
+retract_disciplina(Nome,Curso):-
+ with_mutex(disciplina_db, retract_disciplina(Nome, Curso)).
+
+current_disciplina(Nome,Curso):-
+  with_mutex(disciplina_db, disciplina(Nome,Curso)).  
 
 %estudantes de Ciencia da Computação
 
