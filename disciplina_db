@@ -4,3 +4,87 @@ assert(disciplina('Estrutura de Dados','Ciencia da Computação')).
 retract(disciplina('Estrutura de Dados','Ciencia da Computação')).
 assert(disciplina('Informatica e Sociedade','Ciencia da Computação')).
 retract(disciplina('Informatica e Sociedade','Ciencia da Computação')).
+assert(disciplina('Grafos','Ciencia da Computação')).
+retract(disciplina('Grafos','Ciencia da Computação')).
+assert(disciplina('Algoritmos','Ciência da computação')).
+assert(disciplina('Calculo 1','Ciência da computação')).
+assert(disciplina('Lógica e Fundamentos da Computação','Ciência da computação')).
+assert(disciplina('Geom. Anal e Sist. Lineares','Ciência da computação')).
+assert(disciplina('Lab. C.C','Ciência da computação')).
+assert(disciplina('Lab de Prog.','Ciência da computação')).
+assert(disciplina('Introd. Á C.C','Ciência da computação')).
+assert(disciplina('Algebra Linear','Ciência da computação')).
+assert(disciplina('Calculo 2','Ciência da computação')).
+assert(disciplina('Fisica 1','Ciência da computação')).
+assert(disciplina('Estrutura de Dados','Ciência da computação')).
+assert(disciplina('Lab. de Prog. 2','Ciência da computação')).
+assert(disciplina('Int. A Teoria da dos Numeros','Ciência da computação')).
+assert(disciplina('Calculo 3','Ciência da computação')).
+assert(disciplina('Teoria dos Grafos','Ciência da computação')).
+assert(disciplina('Circuitos Digitais','Ciência da computação')).
+assert(disciplina('Orientação a Objetos','Ciência da computação')).
+assert(disciplina('Inf & Socied.','Ciência da computação')).
+assert(disciplina('Equacões Diferenciais I','Ciência da computação')).
+assert(disciplina('Introdução a Estatistica','Ciência da computação')).
+assert(disciplina('Organização de Computadores','Ciência da computação')).
+assert(disciplina('Estrutura de Dados II','Ciência da computação')).
+assert(disciplina('Modelagem de Sistemas','Ciência da computação')).
+assert(disciplina('Calculo de Probabilidades','Ciência da computação')).
+assert(disciplina('Inteligencia Artificial','Ciência da computação')).
+assert(disciplina('Sistemas Operacionais','Ciência da computação')).
+assert(disciplina('Banco de Dados','Ciência da computação')).
+assert(disciplina('Engenharia de Software','Ciência da computação')).
+assert(disciplina('Pesquisa Operacional','Ciência da computação')).
+assert(disciplina('Linguagens Formais','Ciência da computação')).
+assert(disciplina('Redes de Computadores','Ciência da computação')).
+assert(disciplina('Calculo Numérico','Ciência da computação')).
+assert(disciplina('Interação Humano Computador','Ciência da computação')).
+assert(disciplina('Segurança em Sis. de Computação','Ciência da computação')).
+assert(disciplina('Teoria da Computação','Ciência da computação')).
+assert(disciplina('Analise e Projeto de Algoritimos','Ciência da computação')).
+assert(disciplina('Computação Grafica','Ciência da computação')).
+assert(disciplina('Linguagens de Programação','Ciência da computação')).
+assert(disciplina('Teoria dos Compiladores','Ciência da computação')).
+assert(disciplina('Sistemas Distribuídos','Ciência da computação')).
+assert(disciplina('Algoritmos','Sistemas de Informação')).
+assert(disciplina('Calculo 1','Sistemas de Informação')).
+assert(disciplina('Lógica e Fundamentos da Computação','Sistemas de Informação')).
+assert(disciplina('Geom. Anal e Sist. Lineares','Sistemas de Informação')).
+assert(disciplina('Lab de Prog.','Sistemas de Informação')).
+assert(disciplina('Introd. Á Sistemas de Informação','Sistemas de Informação')).
+assert(disciplina('Laboratorio de Program. Web','Sistemas de Informação')).
+assert(disciplina('Calculo 2','Sistemas de Informação')).
+assert(disciplina('Estrutura de Dados','Sistemas de Informação')).
+assert(disciplina('Principios Gerais de Administraçao I','Sistemas de Informação')).
+assert(disciplina('Lab de Prog. II','Sistemas de Informação')).
+assert(disciplina('Aspectos Legais da Informatica','Sistemas de Informação')).
+assert(disciplina('Calculo de Prbabilidades I','Sistemas de Informação')).
+assert(disciplina('Orientação a Objetos','Sistemas de Informação')).
+assert(disciplina('Teoria dos Grafos','Sistemas de Informação')).
+assert(disciplina('Contabilidade Geral e Introdutória','Sistemas de Informação')).
+assert(disciplina('Informatica e Sociedade','Sistemas de Informação')).
+assert(disciplina('Organização de Compiladores','Sistemas de Informação')).
+assert(disciplina('Modelagem de Sistemas','Sistemas de Informação')).
+assert(disciplina('Aspectos Teoricos da Computação','Sistemas de Informação')).
+assert(disciplina('Estrutura de Dados II','Sistemas de Informação')).
+assert(disciplina('Sistemas Operacionais','Sistemas de Informação')).
+assert(disciplina('Inteligencia Artificial','Sistemas de Informação')).
+assert(disciplina('Engenharia de Software','Sistemas de Informação')).
+assert(disciplina('Banco de Dados','Sistemas de Informação')).
+assert(disciplina('Laboratorio de Programação de Sistemas Web','Sistemas de Informação')).
+assert(disciplina('Redes de computadores','Sistemas de Informação')).
+assert(disciplina('Pesquisa Operacional','Sistemas de Informação')).
+assert(disciplina('Intreação Humano-Computador','Sistemas de Informação')).
+assert(disciplina('Laboratorio de Programação de Sistemas Web II','Sistemas de Informação')).
+assert(disciplina('Empreendimentos em Informatica','Sistemas de Informação')).
+assert(disciplina('Gerencia de Projetos','Sistemas de Informação')).
+assert(disciplina('Teste de Software','Sistemas de Informação')).
+assert(disciplina('Aspectos Avançados de Eng. de Software','Sistemas de Informação')).
+assert(disciplina('Aspectos  Avançados em Banco de Dados','Sistemas de Informação')).
+assert(disciplina('Aspectos Organizacionais de SI','Sistemas de Informação')).
+assert(disciplina('Metodologia Científica em Computação','Sistemas de Informação')).
+assert(disciplina('Laboratorio de Programação para Dispostivos Móveis','Sistemas de Informação')).
+assert(disciplina('Sistema de Apoio á Decisão','Sistemas de Informação')).
+assert(disciplina('Segurança e Auditoria em Sistemas','Sistemas de Informação')).
+
+assert(disciplina('Direito Penal','Direito')).

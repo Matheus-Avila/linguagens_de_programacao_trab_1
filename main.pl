@@ -348,7 +348,7 @@ editar(4) :- write("Digite o nome do curso:"),nl,
     menu.
 
 
-executaEscolha(8) :- write('Qual dado deseja deletar?'),nl,
+executaEscolha(9) :- write("Qual dado deseja deletar?"),nl,
     write('1. Aluno'),nl,
     write('2. Nota de um aluno em disciplina'),nl,
     write('3. Retirar disciplina da grade de algum curso'),nl,

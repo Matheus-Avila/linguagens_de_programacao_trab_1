@@ -18,5 +18,8 @@ add_curso(Nome):-
 retract_curso(Nome):-
  persistency: db_retract(curso:curso(Nome)).
 
+retractall_curso(Nome):-
+ persistency: db_retractall(curso:curso(Nome)).
+
 current_curso(Nome):-
   with_mutex(curso_db, curso(Nome)). 

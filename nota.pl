@@ -17,5 +17,8 @@ add_nota(Nome, Disciplina, Notav):-
 retract_nota(Nome, Disciplina, Notav):-
   persistency: db_retract(nota:nota(Nome, Disciplina, Notav)).
 
+  retractall_nota(Nome, Disciplina, Notav):-
+  persistency: db_retractall(nota:nota(Nome, Disciplina, Notav)).
+
 current_nota(Nome, Disciplina, Notav):-
   with_mutex(nota_db, nota(Nome, Disciplina, Notav)).

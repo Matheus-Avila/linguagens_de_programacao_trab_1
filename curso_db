@@ -2,3 +2,11 @@ created(1638541556.604667).
 assert(curso('Ciencias Biologicas')).
 assert(curso('Direito')).
 retract(curso('Direito')).
+assert(curso('Direito')).
+retract(curso('Direito')).
+assert(curso('Ciencias Biologicas')).
+assert(curso('Direito')).
+assert(curso('Ciência da Computação')).
+assert(curso('Sistemas de Informação')).
+assert(curso('Cinema')).
+retract(curso('Cinema')).

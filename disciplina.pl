@@ -18,5 +18,8 @@ add_disciplina(Nome,Curso):-
 retract_disciplina(Nome,Curso):-
 persistency: db_retract(disciplina:disciplina(Nome,Curso)).
 
+retractall_disciplina(Nome,Curso):-
+persistency: db_retractall(disciplina:disciplina(Nome,Curso)).
+
 current_disciplina(Nome,Curso):-
   with_mutex(disciplina_db, disciplina(Nome,Curso)). 
