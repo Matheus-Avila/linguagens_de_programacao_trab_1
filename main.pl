@@ -15,6 +15,9 @@
 add_estudante(Nome,Curso):-
   with_mutex(estudante_db, assert_estudante(Nome,Curso)).
 
+retract_estudante(Nome,Curso):-
+ with_mutex(estudante_db, retract_estudante(Nome, Curso)).
+
 current_estudante(Nome,Curso):-
   with_mutex(estudante_db, estudante(Nome,Curso)).
 
