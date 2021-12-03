@@ -1,5 +1,4 @@
-% Cadastro e Remoção de estudantes
-:- module(
+:-module(
   estudante,
   [
     add_estudante/2, % +Nome:atom, +Curso:atom
@@ -7,6 +6,8 @@
     current_estudante/2 % ?Nome:atom, ?Curso:atom
   ]
 ).
+use_module(disciplina).
+use_module(nota).
 
 :- use_module(library(persistency)).
 
@@ -16,62 +17,17 @@
 
 add_estudante(Nome,Curso):-
   with_mutex(estudante_db, assert_estudante(Nome,Curso)).
-
 retract_estudante(Nome,Curso):-
  with_mutex(estudante_db, retract_estudante(Nome, Curso)).
-
 current_estudante(Nome,Curso):-
   with_mutex(estudante_db, estudante(Nome,Curso)).
 
 % Cadastro e Remoção de Disciplinas
-:- module(
-  disciplina,
-  [
-    add_disciplina/2, % +Nome:atom, +Curso:atom
-    retract_disciplina/2, % -Nome:atom, -Curso:atom
-    current_disciplina/2 % ?Nome:atom, ?Curso:atom
-  ]
-).
 
-:- use_module(library(persistency)).
-
-:- persistent(disciplina(nome:atom,curso:atom)).
-
-:- initialization(db_attach('estudante_db', [])).
-
-add_disciplina(Nome,Curso):-
-  with_mutex(disciplina_db, assert_disciplina(Nome,Curso)).
-
-retract_disciplina(Nome,Curso):-
- with_mutex(disciplina_db, retract_disciplina(Nome, Curso)).
-
-current_disciplina(Nome,Curso):-
-  with_mutex(disciplina_db, disciplina(Nome,Curso)).  
+ 
 
 %Cadastro e remoção de Notas
-:- module(
-  nota,
-  [
-    add_nota/3, % +Nome:atom, +Disciplina:atom, +Notav:float
-    retract_nota/3, % -Nome:atom, -Disciplina:atom, -Notav:float
-    current_nota/3 ?Nome:atom, ?Disciplina:atom, ?Notav:float
-  ]
-).
 
-:- use_module(library(persistency)).
-
-:- persistent(nota(nome:atom, disciplina:atom, notav:float)).
-
-:- initialization(db_attach('estudante_db', [])).
-
-add_nota(Nome, Disciplina, Notav):-
-  with_mutex(nota_db, assert_nota(Nome, Disciplina, Notav)).
-
-retract_nota(Nome, Disciplina, Notav):-
-  with_mutex(nota_db, retract_nota(Nome, Disciplina, Notav)).
-
-current_nota(Nome, Disciplina, Notav):-
-  with_mutex(nota_db, nota(Nome, Disciplina, Notav)).
 
 
 
@@ -87,7 +43,7 @@ nota('Thiago','Calculo 2',70).
 nota('Lucas','Calculo 1',40).
 
 % disciplinas de Ciência da computação
- %1°periodo
+%1°periodo
 disciplina('Algoritmos','Ciência da computação').
 disciplina('Calculo 1','Ciência da computação').
 disciplina('Lógica e Fundamentos da Computação','Ciência da computação').
@@ -228,7 +184,7 @@ menu :- repeat,
     write('6: Buscar relação de disciplinas que faltam serem cursadas para um dado estudante'),nl,
     write('7: Realizar um cadastro de algum conhecimento'),nl,
     write('8: Realizar edição de algum conhecimento'),nl,
-    write('9: Realizar a edição de algum conhecimento'),nl,
+    write('9: Realizar remoção de algum conhecimento'),nl,
     read(Escolha),
     executaEscolha(Escolha).
 
@@ -293,3 +249,50 @@ alunosDisciplina(1) :- write('Qual a disciplina?'),nl,
     alunoCursouDisciplina(Alunos, Disciplina),
     write(Alunos),
     menu.
+
+alunosDisciplina(2) :- write('Qual a disciplina?'),nl,
+    read(Disciplina),nl,
+    write('Qual a nota mínima?'),nl,
+    read(Nota),nl,
+    alunoCursouDisciplinaNotaMin(Alunos, Disciplina, Nota),
+    write(Alunos),
+    menu.
+
+% executaEscolha(6) :- Precisa ser feito ainda(disciplinas que faltam serem cursadas)
+
+executaEscolha(7) :- write('Qual dado deseja incluir?'),nl,
+    write('1. Aluno'),nl,
+    write('2. Nota em disciplina'),nl,
+    write('3. Disciplina'),nl,
+    write('4. Curso'),nl,
+    read(Opcao),nl,
+    incluir(Opcao),
+    menu.
+
+incluir(1) :- write("Digite o nome do aluno:"),nl,
+    read(Aluno),nl,
+    write("Digite o curso do aluno:"),nl,
+    read(Curso),nl,
+    add_estudante(Aluno, Curso),
+    menu.
+
+incluir(2) :- write("Digite o nome do aluno:"),nl,
+    read(Aluno),nl,
+    write("Digite o nome da disciplina:"),nl,
+    read(Disciplina),nl,
+    write("Digite a nota do aluno:"),nl,
+    read(Nota),nl,
+    add_nota(Aluno, Disciplina, Nota),
+    menu.
+
+incluir(3) :- write("Digite o nome da disciplina"),nl,
+    read(Disciplina),nl,
+    write('Digite o curso associado a essa disciplina'),nl,
+    read(Curso),
+    add_disciplina(Disciplina, Curso),
+    menu.
+
+%incluir(4) :- write("Digite o nome do curso:"),nl,
+%    read(Curso),nl,
+%    add_curso(Curso),
+%    menu.

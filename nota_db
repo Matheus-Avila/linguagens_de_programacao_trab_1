@@ -1,0 +1,3 @@
+created(1638500538.121989).
+assert(nota('Tadeu','Calculo 1',60.0)).
+assert(nota('Carlos','Calculo 2',70.0)).
