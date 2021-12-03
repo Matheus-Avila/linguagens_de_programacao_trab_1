@@ -5,3 +5,4 @@ retract(estudante('Matheus','Ciência da computação')).
 assert(estudante('Tadeu','Ciência da computação')).
 assert(estudante('Josefina','Ciencia da Computação')).
 assert(estudante('Jonathan Joestar','Sistemas de Informação')).
+assert(estudante('Matheus','Ciência da computação')).
