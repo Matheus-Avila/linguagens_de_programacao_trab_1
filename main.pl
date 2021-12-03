@@ -48,6 +48,33 @@ retract_disciplina(Nome,Curso):-
 current_disciplina(Nome,Curso):-
   with_mutex(disciplina_db, disciplina(Nome,Curso)).  
 
+%Cadastro e remoção de Notas
+:- module(
+  nota,
+  [
+    add_nota/3, % +Nome:atom, +Disciplina:atom, +Notav:float
+    retract_nota/3, % -Nome:atom, -Disciplina:atom, -Notav:float
+    current_nota/3 ?Nome:atom, ?Disciplina:atom, ?Notav:float
+  ]
+).
+
+:- use_module(library(persistency)).
+
+:- persistent(nota(nome:atom, disciplina:atom, notav:float)).
+
+:- initialization(db_attach('estudante_db', [])).
+
+add_nota(Nome, Disciplina, Notav):-
+  with_mutex(nota_db, assert_nota(Nome, Disciplina, Notav)).
+
+retract_nota(Nome, Disciplina, Notav):-
+  with_mutex(nota_db, retract_nota(Nome, Disciplina, Notav)).
+
+current_nota(Nome, Disciplina, Notav):-
+  with_mutex(nota_db, nota(Nome, Disciplina, Notav)).
+
+
+
 %estudantes de Ciencia da Computação
 
 nota('Matheus','Algoritmos',70).
