@@ -16,7 +16,7 @@ add_disciplina(Nome,Curso):-
   with_mutex(disciplina_db, assert_disciplina(Nome,Curso)).
 
 retract_disciplina(Nome,Curso):-
- with_mutex(disciplina_db, retract_disciplina(Nome, Curso)).
+persistency: db_retract(disciplina:disciplina(Nome,Curso)).
 
 current_disciplina(Nome,Curso):-
   with_mutex(disciplina_db, disciplina(Nome,Curso)). 

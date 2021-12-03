@@ -1,2 +1,6 @@
 created(1638540332.274191).
 assert(disciplina('Banco de Dados','Ciencia da Computação')).
+assert(disciplina('Estrutura de Dados','Ciencia da Computação')).
+retract(disciplina('Estrutura de Dados','Ciencia da Computação')).
+assert(disciplina('Informatica e Sociedade','Ciencia da Computação')).
+retract(disciplina('Informatica e Sociedade','Ciencia da Computação')).

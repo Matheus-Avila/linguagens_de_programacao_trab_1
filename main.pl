@@ -293,7 +293,7 @@ incluir(3) :- write("Digite o nome da disciplina"),nl,
     add_disciplina(Disciplina, Curso),
     menu.
 
-%incluir(4) :- write("Digite o nome do curso:"),nl,
-%    read(Curso),nl,
-%    add_curso(Curso),
-%    menu.
+incluir(4) :- write("Digite o nome do curso:"),nl,
+    read(Curso),nl,
+    add_curso(Curso),
+    menu.
