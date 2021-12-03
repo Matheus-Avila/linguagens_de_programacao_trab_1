@@ -8,6 +8,7 @@
 ).
 use_module(disciplina).
 use_module(nota).
+use_module(curso).
 
 :- use_module(library(persistency)).
 

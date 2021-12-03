@@ -1,3 +1,5 @@
 created(1638500538.121989).
 assert(nota('Tadeu','Calculo 1',60.0)).
 assert(nota('Carlos','Calculo 2',70.0)).
+assert(nota('Matheus','Banco de Dados',80.0)).
+assert(nota('Matheus','Estrutura de Dados II',85.0)).
