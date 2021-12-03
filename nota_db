@@ -3,5 +3,5 @@ assert(nota('Tadeu','Calculo 1',60.0)).
 assert(nota('Carlos','Calculo 2',70.0)).
 assert(nota('Matheus','Banco de Dados',80.0)).
 assert(nota('Matheus','Estrutura de Dados II',85.0)).
-assert(nota('Josefina','Banco de Dados',80.5)).
-retract(nota('Josefina','Banco de Dados',80.5)).
+assert(nota('Matheus','Calculo 2',60.0)).
+assert(nota('Matheus','Calculo 1',92.5)).

@@ -297,3 +297,88 @@ incluir(4) :- write("Digite o nome do curso:"),nl,
     read(Curso),nl,
     add_curso(Curso),
     menu.
+
+executaEscolha(8) :- write('Qual dado deseja editar?'),nl,
+    write('1. Nome do aluno e curso associado'),nl,
+    write('2. Nota em disciplina'),nl,
+    write('3. Nome da disciplina'),nl,
+    write('4. Curso'),nl,
+    read(Opcao),nl,
+    editar(Opcao),
+    menu.
+
+editar(1) :- write("Digite o nome do aluno que deseja alterar:"),nl,
+    read(Aluno),nl,
+    write("Digite o curso do aluno desejado:"),nl,
+    read(Curso),nl,
+    retract_estudante(Aluno,Curso),
+    write("Digite o nome correto do aluno:"),nl,
+    read(AlunoNovo),nl,
+    write("Digite o curso correto do aluno:"),nl,
+    read(CursoNovo),nl,
+    add_estudante(AlunoNovo, CursoNovo),
+    menu.
+
+editar(2) :- write("Digite o nome do aluno:"),nl,
+    read(Aluno),nl,
+    write("Digite o nome da disciplina:"),nl,
+    read(Disciplina),nl,
+    write("Digite a nova nota do aluno:"),nl,
+    read(NotaNova),nl,
+    retract_nota(Aluno, Disciplina, _),
+    add_nota(Aluno, Disciplina, NotaNova),
+    menu.
+
+editar(3) :- write("Digite o nome da disciplina"),nl,
+    read(Disciplina),nl,
+    write("Digite o nome do curso associado a disciplina:"),nl,
+    read(Curso),nl,
+    retract_disciplina(Disciplina, Curso),
+    write("Digite o novo nome da disciplina"),nl,
+    read(DisciplinaNova),nl,
+    add_disciplina(DisciplinaNova, Curso),
+    menu.
+
+editar(4) :- write("Digite o nome do curso:"),nl,
+    read(Curso),nl,
+    retract_curso(Curso),
+    write("Digite o novo nome do curso:"),nl,
+    read(CursoNovo),
+    add_curso(CursoNovo),
+    menu.
+
+
+executaEscolha(8) :- write('Qual dado deseja deletar?'),nl,
+    write('1. Aluno'),nl,
+    write('2. Nota de um aluno em disciplina'),nl,
+    write('3. Retirar disciplina da grade de algum curso'),nl,
+    write('4. Deletar curso'),nl,
+    read(Opcao),nl,
+    deletar(Opcao),
+    menu.
+
+deletar(1) :- write("Digite o nome do aluno que deseja deletar:"),nl,
+    read(Aluno),nl,
+    write("Digite o curso do aluno desejado:"),nl,
+    read(Curso),nl,
+    retract_estudante(Aluno,Curso),
+    menu.
+
+deletar(2) :- write("Digite o nome do aluno:"),nl,
+    read(Aluno),nl,
+    write("Digite o nome da disciplina:"),nl,
+    read(Disciplina),nl,
+    retract_nota(Aluno, Disciplina, _),
+    menu.
+
+deletar(3) :- write("Digite o nome da disciplina"),nl,
+    read(Disciplina),nl,
+    write("Digite o nome do curso associado a disciplina:"),nl,
+    read(Curso),nl,
+    retract_disciplina(Disciplina, Curso),
+    menu.
+
+deletar(4) :- write("Digite o nome do curso:"),nl,
+    read(Curso),nl,
+    retract_curso(Curso),
+    menu.
