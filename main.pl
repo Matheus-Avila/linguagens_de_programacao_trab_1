@@ -135,13 +135,10 @@ disciplina('Laboratorio de Programação para Dispostivos Móveis','Sistemas de 
 disciplina('Sistema de Apoio á Decisão','Sistemas de Informação').
 disciplina('Segurança e Auditoria em Sistemas','Sistemas de Informação').
 
- 
-
-
-
 alunoCursouDisciplinaAux(Aluno, Disciplina) :- estudante(Aluno, _), nota(Aluno, Disciplina, _).
 
 alunoCursouDisciplina(Alunos, Disciplina) :- findall(Aluno, alunoCursouDisciplinaAux(Aluno, Disciplina), Alunos).
+
 alunoCursouDisciplinaNotaMin(Alunos, Disciplina, ValorMin) :- findall(Aluno, filtroPorNota(Aluno, _, Disciplina, ValorMin), Alunos).
 
 filtraIraAux(Aluno, Curso, IraMin) :- estudanteIra(Aluno, Curso, IraResultado), IraResultado >= IraMin.
@@ -173,6 +170,11 @@ menu :- repeat,
     write('2: Buscar matriz curricular de um curso'),nl,
     write('3: Buscar histórico de um aluno'),nl,
     write('4: Buscar alunos matriculados em um curso'),nl,
+    write('5: Buscar alunos que já cursaram uma disciplina'),nl,
+    write('6: Buscar relação de disciplinas que faltam serem cursadas para um dado estudante'),nl,
+    write('7: Realizar um cadastro de algum conhecimento'),nl,
+    write('8: Realizar edição de algum conhecimento'),nl,
+    write('9: Realizar a edição de algum conhecimento'),nl,
     read(Escolha),
     executaEscolha(Escolha).
 
@@ -186,4 +188,54 @@ executaEscolha(2) :- write('Digite o nome do curso entre aspas simples'),nl,
     read(Curso),nl,
     matriz(DisciplinasMatriz, Curso),
     write(DisciplinasMatriz),nl,
+    menu.
+
+executaEscolha(3) :- write('Digite o nome do aluno entre aspas simples'),nl,
+    read(Nome),nl,
+    historicoComNota(Nome, Historico),
+    write(Historico),nl,
+    menu.
+
+executaEscolha(4) :- write('Qual é o critério desejado?'),nl,
+    write('1: Nota mínima em disciplina'),nl,
+    write('2: IRA mínimo'),nl,
+    read(Opcao),
+    alunosCurso(Opcao),
+    menu.
+
+alunosCurso(1) :- write('Qual é a disciplina desejada como critério?'),nl,
+    read(Disciplina),nl,
+    write('Qual é o curso?'),nl,
+    read(Curso),nl,
+    write("Qual a nota mínima?"),nl,
+    read(Nota),nl,
+    alunosCursoDisciplinaNotaMinima(Alunos, Curso, Disciplina, Nota),
+    write(Alunos),nl,
+    menu.
+
+alunosCurso(2) :- write('Qual é IRA mínimo?'),nl,
+    read(Ira),nl,
+    write('Qual é o curso?'),nl,
+    read(Curso),nl,
+    alunosCursoIraMinimo(Alunos, Curso, Ira),
+    write(Alunos),nl,
+    menu.
+
+alunosCurso(3) :- write('Qual é o curso?'),nl,
+    read(Curso),nl,
+    estudantesCurso(Alunos, Curso),
+    write(Alunos),nl,
+    menu.
+
+executaEscolha(5) :- write("Deseja critério por nota?"),nl,
+    write("1: Não"),nl,
+    write("2: Sim"),nl,
+    read(Opcao),
+    alunosDisciplina(Opcao),
+    menu.
+
+alunosDisciplina(1) :- write('Qual a disciplina?'),nl,
+    read(Disciplina),nl,
+    alunoCursouDisciplina(Alunos, Disciplina),
+    write(Alunos),
     menu.

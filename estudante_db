@@ -1,2 +1,4 @@
 created(1638477382.8781438).
 assert(estudante('Matheus','Ciência da computação')).
+assert(estudante('Lucas','Ciência da computação')).
+retract(estudante('Matheus','Ciência da computação')).
