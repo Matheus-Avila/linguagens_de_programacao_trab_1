@@ -3,6 +3,7 @@
   [
     add_nota/3, % +Nome:atom, +Disciplina:atom, +Notav:float
     retract_nota/3, % -Nome:atom, -Disciplina:atom, -Notav:float
+    retractall_nota/3, % -Nome:atom, -Disciplina:atom, -Notav:float
     current_nota/3 % ?Nome:atom, ?Disciplina:atom, ?Notav:float
   ]
 ).

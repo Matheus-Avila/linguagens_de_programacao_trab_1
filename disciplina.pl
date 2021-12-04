@@ -3,6 +3,7 @@
     [
         add_disciplina/2, % +Nome:atom, +Curso:atom
         retract_disciplina/2, % -Nome:atom, -Curso:atom
+        retractall_disciplina/2, % -Nome:atom, -Curso:atom
         current_disciplina/2 % ?Nome:atom, ?Curso:atom
     ]
 ).

@@ -3,6 +3,7 @@
     [
         add_curso/1, % +Nome:atom
         retract_curso/1, % -Nome:atom
+        retractall_curso/1, % -Nome:atom
         current_curso/1 % ?Nome:atom
     ]
 ).
