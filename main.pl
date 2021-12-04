@@ -26,7 +26,7 @@ current_estudante(Nome,Curso):-
 % Cadastro e Remoção de Disciplinas
  
 
-disciplinasFaltamAluno(Aluno, Curso, Disciplinas) :- matriz(DisciplinasMatriz, Curso), historicoSemNota(Aluno, Historico), subtract(Disciplinas,Historico, Disciplinas).
+disciplinasFaltamAluno(Aluno, Curso, Disciplinas) :- matriz(DisciplinasMatriz, Curso), historicoSemNota(Aluno, Historico), subtract(DisciplinasMatriz,Historico, Disciplinas).
 
 alunoCursouDisciplinaAux(Aluno, Disciplina) :- estudante(Aluno, _), nota:nota(Aluno, Disciplina, _).
 
