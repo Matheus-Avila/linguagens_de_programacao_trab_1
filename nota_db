@@ -5,3 +5,4 @@ assert(nota('Matheus','Banco de Dados',80.0)).
 assert(nota('Matheus','Estrutura de Dados II',85.0)).
 assert(nota('Matheus','Calculo 2',60.0)).
 assert(nota('Matheus','Calculo 1',92.5)).
+assert(nota('Lucas','Calculo 2',82.6)).
