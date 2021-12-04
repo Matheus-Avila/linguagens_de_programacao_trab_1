@@ -146,6 +146,8 @@ disciplina('Laboratorio de Programação para Dispostivos Móveis','Sistemas de 
 disciplina('Sistema de Apoio á Decisão','Sistemas de Informação').
 disciplina('Segurança e Auditoria em Sistemas','Sistemas de Informação').
 
+disciplinasFaltamAluno(Aluno, Curso, Disciplinas) :- matriz(DisciplinasMatriz, Curso), historicoSemNota(Aluno, Historico), subtract(Disciplinas,Historico, Disciplinas).
+
 alunoCursouDisciplinaAux(Aluno, Disciplina) :- estudante(Aluno, _), nota(Aluno, Disciplina, _).
 
 alunoCursouDisciplina(Alunos, Disciplina) :- findall(Aluno, alunoCursouDisciplinaAux(Aluno, Disciplina), Alunos).
@@ -259,7 +261,13 @@ alunosDisciplina(2) :- write('Qual a disciplina?'),nl,
     write(Alunos),
     menu.
 
-% executaEscolha(6) :- Precisa ser feito ainda(disciplinas que faltam serem cursadas)
+executaEscolha(6) :- write("Digite o nome do aluno:"),nl,
+    read(Aluno),nl,
+    write("Digite o curso do aluno:"),nl,
+    read(Curso),nl,
+    disciplinasFaltamAluno(Aluno, Curso, Disciplinas),
+    write(Disciplinas),nl,
+    menu.
 
 executaEscolha(7) :- write('Qual dado deseja incluir?'),nl,
     write('1. Aluno'),nl,
