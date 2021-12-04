@@ -10,3 +10,4 @@ assert(curso('Ciência da Computação')).
 assert(curso('Sistemas de Informação')).
 assert(curso('Cinema')).
 retract(curso('Cinema')).
+assert(curso('Ciência da computação')).
